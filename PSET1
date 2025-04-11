@@ -1,0 +1,78 @@
+#bank.py
+z=str(input("Greeting:"))
+y =z.strip().lower()
+x=y[0]
+w=y[0:5]
+if x=="h":
+    if w=="hello":
+        print("$0")
+    else: print("$20")
+else: print("$100")
+print(w)
+
+#deep.py
+z=str(input("What is the Answer to the Great Question of Life, the Universe, and Everything? "))
+y= z.strip().lower()
+match y:
+    case "42" | "forty two" | "forty-two":
+        print("Yes")
+    case _:
+        print("No")
+
+#extensions.py
+def main():
+    filename = input("File name: ")
+    suffixes = {
+        ".gif": "image/gif",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".pdf": "application/pdf",
+        ".txt": "text/plain",
+        ".zip": "application/zip"
+    }
+
+    for suffix, media_type in suffixes.items():
+        if filename.strip().lower().endswith(suffix):
+            print(media_type)
+            return
+
+    print("application/octet-stream")
+
+
+if __name__ == "__main__":
+    main()
+
+#interpreter.py
+a=str(input("Expression:"))
+x,y,z=a.split(" ")
+x=float(x)
+z=float(z)
+y=y.strip()
+match y:
+  case "+":
+    print(float(x+z))
+  case "-":
+    print(float(x-z))
+  case "*":
+    print(float(x*z))
+  case "/":
+    print(float(x/z))
+  case _:
+    print("Wrong expression")
+
+#meal.py
+def main():
+    t=str(input("What time is it? "))
+    o=convert(t)
+    if 7.0<=o<=8.0: print("breakfast time")
+    elif 12.0<=o<=13.0: print("lunch time")
+    elif 18.0<=o<=19.0: print("dinner time")
+def convert(t):
+    h,m=t.split(":")
+    h=int(h)
+    m=int(m)
+    o=h+(m/60)
+    return(o)
+if __name__ == "__main__":
+    main()
